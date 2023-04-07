@@ -1,2 +1,1 @@
-# Forkify
- 
+# Forkify App
