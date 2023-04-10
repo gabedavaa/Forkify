@@ -8,7 +8,6 @@ class ResultsView extends View {
   _meassage = '';
 
   _generateMarkup() {
-    console.log(this._data);
     return this._data.map(this._generateMarkupPriview).join('');
   }
 
