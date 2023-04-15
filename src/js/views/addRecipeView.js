@@ -17,10 +17,14 @@ class AddRecipeView extends View {
     this._addHandlerHideWindow();
   }
 
+  hideWindow() {
+    this._overlay.classList.add('hidden');
+    this._window.classList.add('hidden');
+  }
+
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');
-    console.log('gg');
   }
 
   _addHandlerShowWindow() {

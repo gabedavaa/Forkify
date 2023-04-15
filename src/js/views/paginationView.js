@@ -32,6 +32,9 @@ class PaginationView extends View {
             <use href="${icons}#icon-arrow-right"></use>
           </svg>
         </button>
+        <button class="btn--inline disabled">
+          <span>${numPages} Page${numPages > 1 ? 's' : ''}</span>
+        </button>
         `;
     }
 
@@ -46,6 +49,9 @@ class PaginationView extends View {
           </svg>
           <span>Page ${currentPage - 1}</span>
         </button>
+        <button class="btn--inline disabled">
+          <span>${numPages} Page${numPages > 1 ? 's' : ''}</span>
+        </button>
         `;
     }
 
@@ -59,6 +65,9 @@ class PaginationView extends View {
             <use href="${icons}#icon-arrow-left"></use>
           </svg>
           <span>Page ${currentPage - 1}</span>
+        </button>
+        <button class="btn--inline disabled">
+          <span>${numPages} Page${numPages > 1 ? 's' : ''}</span>
         </button>
         <button data-goto="${
           currentPage + 1
