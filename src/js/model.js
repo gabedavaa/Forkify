@@ -1,7 +1,7 @@
 import { async } from 'regenerator-runtime';
 import { RES_PER_PAGE } from './config';
 import { API_URL } from './config.JS';
-import { KEY } from './config.JS';
+import { KEY } from './config';
 import { AJAX } from './helpers.js';
 
 export const state = {
@@ -14,7 +14,7 @@ export const state = {
   },
   bookmarks: [],
 };
-console.log(KEY);
+// console.log(KEY);
 
 const createRecipeObject = function (data) {
   let { recipe } = data.data;
@@ -132,7 +132,7 @@ const clearBookmarks = function () {
 
 export const uploadRecipe = async function (newRecipe) {
   try {
-    console.log(Object.entries(newRecipe));
+    // console.log(Object.entries(newRecipe));
     // const ingredients = Object.entries(newRecipe);
 
     const ingredients = Object.entries(newRecipe)
@@ -147,7 +147,6 @@ export const uploadRecipe = async function (newRecipe) {
         const [quantity, unit, description] = ingArr;
         return { quantity: quantity ? +quantity : null, unit, description };
       });
-    console.log(ingredients);
 
     const recipe = {
       title: newRecipe.title,
@@ -160,7 +159,7 @@ export const uploadRecipe = async function (newRecipe) {
     };
 
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
-    console.log(data);
+    // console.log(data);
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
   } catch (error) {
